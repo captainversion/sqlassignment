@@ -69,15 +69,10 @@ SELECT * FROM SalesPeople sp WHERE NOT EXISTS (
 Select Count(*) From SalesPeople Where City ='NewYork';
 
 
-
 SELECT City, COUNT(*) AS count
 FROM SalesPeople
 WHERE City IN ('London', 'Paris')
 GROUP BY City;
-
-
-
-
 
 
 SELECT sp.Sname, o.Onum, o.Odate
