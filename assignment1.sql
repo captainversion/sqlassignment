@@ -58,12 +58,8 @@ VALUES
 SELECT COUNT(*) FROM SalesPeople WHERE Sname LIKE 'A%';
 
 
-
-SELECT * FROM SalesPeople sp WHERE NOT EXISTS (
-    SELECT * FROM Orders o
-    WHERE o.Snum = sp.Snum AND o.Amt <= 2000
+SELECT Snum,Sname,City,Comm From SalesPeople Where Snum IN ( Select Snum From Orders Group By Snum Having Sum(Amt)>2000
 );
-
 
 
 Select Count(*) From SalesPeople Where City ='NewYork';
